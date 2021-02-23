@@ -5,7 +5,8 @@ USER root
 COPY files/entitlement/* /etc/pki/entitlement
 COPY files/redhat.repo /etc/yum.repos.d
 
-RUN dnf -y update && \
+RUN rm /etc/yum.repos.d/ubi.repo && \
+    dnf -y update && \
     dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
     dnf -y install squid squidGuard && \
     dnf -y clean all
