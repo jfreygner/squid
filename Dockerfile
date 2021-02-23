@@ -2,7 +2,7 @@ FROM registry.redhat.io/ubi8/ubi
 
 USER root
 
-COPY files/entitlement /etc/pki
+COPY files/entitlement/* /etc/pki/entitlement
 COPY files/redhat.repo /etc/yum.repos.d
 
 RUN dnf -y update && \
