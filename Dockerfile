@@ -4,9 +4,9 @@ USER root
 
 COPY files/entitlement/* /etc/pki/entitlement
 COPY files/redhat.repo /etc/yum.repos.d
-COPY files/rhsm.conf /etc/rhsm
+COPY files/katello-server-ca.pem /etc/rhsm/ca
 
-RUN rm /etc/yum.repos.d/ubi.repo && \
+RUN sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription-manager.conf && \
     dnf -y update && \
     dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
     dnf -y install squid squidGuard && \
