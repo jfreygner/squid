@@ -4,6 +4,7 @@ USER root
 
 COPY files/entitlement/* /etc/pki/entitlement
 COPY files/redhat.repo /etc/yum.repos.d
+COPY files/rhsm.conf /etc/rhsm
 
 RUN rm /etc/yum.repos.d/ubi.repo && \
     dnf -y update && \
