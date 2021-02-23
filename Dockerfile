@@ -10,12 +10,12 @@ RUN sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription
     dnf -y update && \
     dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
     dnf -y install squid squidGuard && \
-    dnf -y clean all
-
-COPY files/squid.conf /etc/squid/squid.conf
+    dnf -y clean all && \
+    cp /etc/squid/squid.conf /etc/squid/squid.conf.ori && \
+    rm -rf /etc/pki/entitlement/*
 
 RUN chgrp -R root /etc/squid /var/log/squid /var/spool/squid /var/run/squid && \
-	chmod -R g=u /var/log/squid /var/spool/squid /run
+	chmod -R g=u /var/log/squid /var/spool/squid /var/run/squid
 
 VOLUME /var/spool/squid
 VOLUME /var/log
