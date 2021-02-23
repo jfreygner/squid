@@ -15,7 +15,8 @@ RUN sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription
     rm -rf /etc/pki/entitlement/*
 
 RUN chgrp -R root /etc/squid /var/log/squid /var/spool/squid /var/run && \
-	chmod -R g=u /var/log/squid /var/spool/squid /var/run
+	chmod -R g=u /var/log/squid /var/spool/squid && \
+        chmod g=u /var/run
 
 VOLUME /var/spool/squid
 VOLUME /var/log
