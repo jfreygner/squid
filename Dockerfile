@@ -1,5 +1,10 @@
 FROM registry.redhat.io/ubi8/ubi
 
+USER root
+
+COPY files/etc-pki-entitlement /etc/pki/entitlement
+COPY files/redhat.repo /etc/yum.repos.d
+
 RUN dnf -y update && \
     dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
     dnf -y install squid squidGuard && \
