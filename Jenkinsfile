@@ -36,37 +36,5 @@ pipeline {
                    '''
             }
         }
-
-        stage('Wait for S2I build to complete') {
-            steps {
-                script {
-                    openshift.withCluster() {
-                        openshift.withProject( "${DEV_PROJECT}" ) {
-                            def bc = openshift.selector("bc", "${APP_NAME}")
-                            bc.logs('-f')
-                            def builds = bc.related('builds')
-                            builds.untilEach(1) {
-                                return (it.object().status.phase == "Complete")
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        stage('Wait for deployment in DEV env') {
-            steps {
-                script {
-                    openshift.withCluster() {
-                        openshift.withProject( "${DEV_PROJECT}" ) {
-                            def deployment = openshift.selector("dc", "${APP_NAME}").rollout()
-                            openshift.selector("dc", "${APP_NAME}").related('pods').untilEach(1) {
-                                return (it.object().status.phase == "Running")
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 }
