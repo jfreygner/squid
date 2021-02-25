@@ -11,7 +11,7 @@ pipeline {
 
     environment {
         DEV_PROJECT = "fre-squid2"
-        APP_GIT_URL = "https://github.com/jfreygner/squid"
+        APP_GIT_URL = "https://github.com/jfreygner/squid#main"
 
         // DO NOT CHANGE THE GLOBAL VARS BELOW THIS LINE
         APP_NAME = "squid2"
