@@ -33,7 +33,6 @@ pipeline {
                 sh '''
                         oc project ${DEV_PROJECT}
                         oc new-app  --name ${APP_NAME} ${APP_GIT_URL}
-                        oc expose svc/${APP_NAME}
                    '''
             }
         }
