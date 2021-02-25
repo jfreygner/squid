@@ -32,7 +32,7 @@ pipeline {
                 echo '### Creating a new app in DEV env ###'
                 sh '''
                         oc project ${DEV_PROJECT}
-                        oc new-app  --name ${APP_NAME} ${APP_GIT_URL}
+                        oc new-app  --name=${APP_NAME} --strategy=docker ${APP_GIT_URL}
                    '''
             }
         }
