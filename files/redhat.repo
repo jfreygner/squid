@@ -74,9 +74,9 @@ sslclientcert = /etc/pki/entitlement/5886952443383677829.pem
 metadata_expire = 1
 enabled_metadata = 1
 
-[satellite-tools-6.7-for-rhel-8-x86_64-rpms]
-name = Red Hat Satellite Tools 6.7 for RHEL 8 x86_64 (RPMs)
-baseurl = https://fresv06.freygner.local/pulp/repos/Default_Organization/Production/RPM8-Puppet/content/dist/layered/rhel8/x86_64/sat-tools/6.7/os
+[satellite-tools-6.9-for-rhel-8-x86_64-rpms]
+name = Red Hat Satellite Tools 6.9 for RHEL 8 x86_64 (RPMs)
+baseurl = https://fresv06.freygner.local/pulp/repos/Default_Organization/Production/RPM8-Puppet/content/dist/layered/rhel8/x86_64/sat-tools/6.9/os
 enabled = 1
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
