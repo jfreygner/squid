@@ -25,6 +25,8 @@ VOLUME /var/log
 
 EXPOSE 8080
 
+ENV VAR1=dummy
+
 CMD ["/usr/sbin/squid","--foreground"]
 
 USER 1001
