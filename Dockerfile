@@ -11,6 +11,7 @@ RUN sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription
     dnf -y update && \
     dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
     dnf -y install squid squidGuard && \
+    dnf -y install procps-ng iputils iproute && \
     dnf -y clean all && \
     mv /etc/squid/squid.conf /etc/squid/squid.conf.ori && \
     rm -rf /etc/pki/entitlement/* && \
