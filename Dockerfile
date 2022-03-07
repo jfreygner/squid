@@ -2,10 +2,7 @@ FROM registry.redhat.io/ubi8/ubi
 
 USER root
 
-COPY files/entitlement/* /etc/pki/entitlement
-COPY files/redhat.repo /etc/yum.repos.d
-COPY files/katello-server-ca.pem /etc/rhsm/ca
-#COPY files/squid.conf /etc/squid
+ADD files/files.tgz /
 
 RUN sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription-manager.conf && \
     dnf -y update && \
