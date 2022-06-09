@@ -14,16 +14,13 @@ RUN sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription
     rm -rf /etc/pki/entitlement/* && \
     mkdir /etc/squid/cm && \
     ln -s /etc/squid/cm/squid.conf /etc/squid/squid.conf && \
-    chgrp -R root /etc/squid /var/log/squid /var/spool/squid /var/run && \
-    chmod -R g=u /var/log/squid /var/spool/squid && \
-    chmod g=u /var/run
+    chgrp -R root /etc/squid /var/run && \
+    chmod -R g=u /var/run
 
 VOLUME /var/spool/squid
-VOLUME /var/log
+VOLUME /var/log/squid
 
 EXPOSE 8080
-
-ENV VAR1=dummy
 
 CMD ["/usr/sbin/squid","--foreground"]
 
