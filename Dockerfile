@@ -4,7 +4,7 @@ USER root
 
 ADD files/files.tgz /
 
-RUN ping -c 1 -w 1 fresv07.freygner.local &> /dev/null || mv /etc/yum.repos.d/redhat.repo /etc/yum.repos.d/redhat.repo.sat
+RUN ping -c 1 -w 1 fresv07.freygner.local &> /dev/null || mv /etc/yum.repos.d/redhat.repo /etc/yum.repos.d/redhat.repo.sat && \
     sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription-manager.conf && \
     dnf -y update && \
     dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
