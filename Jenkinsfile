@@ -10,11 +10,11 @@ pipeline {
     }
 
     environment {
-        DEV_PROJECT = "fre-squid2"
+        DEV_PROJECT = "fre-squid"
         APP_GIT_URL = "https://github.com/jfreygner/squid#main"
 
         // DO NOT CHANGE THE GLOBAL VARS BELOW THIS LINE
-        APP_NAME = "squid2"
+        APP_NAME = "squid"
     }
 
 
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo '### Cleaning existing resources in DEV env ###'
                 sh '''
-                        oc delete project ${DEV_PROJECT}
+                        oc get project | grep ${DEV_PROJECT} && oc delete project ${DEV_PROJECT}
                         sleep 15
                    '''
 
