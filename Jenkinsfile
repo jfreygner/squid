@@ -24,9 +24,8 @@ pipeline {
             steps {
                 echo '### Cleaning existing resources in DEV env ###'
                 sh '''
-                        oc project ${DEV_PROJECT}
-                        oc delete all -l app=${APP_NAME}
-                        sleep 5
+                        oc delete project ${DEV_PROJECT}
+                        sleep 15
                    '''
 
                 echo '### Creating a new app in DEV env ###'
