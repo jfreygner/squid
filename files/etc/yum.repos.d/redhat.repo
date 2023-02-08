@@ -9,80 +9,67 @@
 # a "yum repolist" to refresh available repos
 #
 
-[rhel-8-for-x86_64-appstream-rpms]
-name = Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
-baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Production/RPM8-Puppet/content/dist/rhel8/8/x86_64/appstream/os
+[rhel-9-for-x86_64-appstream-rpms]
+name = Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
+baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/rhel9/$releasever/x86_64/appstream/os
 enabled = 1
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 sslverify = 1
 sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/6743030063988927796-key.pem
-sslclientcert = /etc/pki/entitlement/6743030063988927796.pem
+sslclientkey = /etc/pki/entitlement/2248522778159184554-key.pem
+sslclientcert = /etc/pki/entitlement/2248522778159184554.pem
 metadata_expire = 1
 enabled_metadata = 1
 
-[Default_Organization_EPEL_EPEL8]
-name = EPEL8
-baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Production/RPM8-Puppet/custom/EPEL/EPEL8
-enabled = 0
-gpgcheck = 1
-gpgkey = https://fresv06.freygner.local/katello/api/v2/repositories/504/gpg_key_content
-sslverify = 1
-sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/408101508931197523-key.pem
-sslclientcert = /etc/pki/entitlement/408101508931197523.pem
-metadata_expire = 1
-enabled_metadata = 1
-
-[rhel-8-for-x86_64-supplementary-rpms]
-name = Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
-baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Production/RPM8-Puppet/content/dist/rhel8/8/x86_64/supplementary/os
+[rhel-9-for-x86_64-supplementary-rpms]
+name = Red Hat Enterprise Linux 9 for x86_64 - Supplementary (RPMs)
+baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/rhel9/$releasever/x86_64/supplementary/os
 enabled = 0
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 sslverify = 1
 sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/6743030063988927796-key.pem
-sslclientcert = /etc/pki/entitlement/6743030063988927796.pem
+sslclientkey = /etc/pki/entitlement/2248522778159184554-key.pem
+sslclientcert = /etc/pki/entitlement/2248522778159184554.pem
 metadata_expire = 1
 enabled_metadata = 0
 
-[rhel-8-for-x86_64-baseos-rpms]
-name = Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
-baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Production/RPM8-Puppet/content/dist/rhel8/8/x86_64/baseos/os
+[rhel-9-for-x86_64-baseos-rpms]
+name = Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
+baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/rhel9/$releasever/x86_64/baseos/os
 enabled = 1
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 sslverify = 1
 sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/6743030063988927796-key.pem
-sslclientcert = /etc/pki/entitlement/6743030063988927796.pem
+sslclientkey = /etc/pki/entitlement/2248522778159184554-key.pem
+sslclientcert = /etc/pki/entitlement/2248522778159184554.pem
 metadata_expire = 1
 enabled_metadata = 1
 
-[codeready-builder-for-rhel-8-x86_64-rpms]
-name = Red Hat CodeReady Linux Builder for RHEL 8 x86_64 (RPMs)
-baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Production/RPM8-Puppet/content/dist/rhel8/8/x86_64/codeready-builder/os
+[ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms]
+name = Red Hat Ansible Automation Platform 2.3 for RHEL 9 x86_64 (RPMs)
+baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/layered/rhel9/x86_64/ansible-automation-platform/2.3/os
 enabled = 0
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 sslverify = 1
 sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/6743030063988927796-key.pem
-sslclientcert = /etc/pki/entitlement/6743030063988927796.pem
-metadata_expire = 86400
+sslclientkey = /etc/pki/entitlement/2248522778159184554-key.pem
+sslclientcert = /etc/pki/entitlement/2248522778159184554.pem
+metadata_expire = 1
 enabled_metadata = 0
 
-[satellite-client-6-for-rhel-8-x86_64-rpms]
-name = Red Hat Satellite Client 6 for RHEL 8 x86_64 (RPMs)
-baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Production/RPM8-Puppet/content/dist/layered/rhel8/x86_64/sat-client/6/os
+[satellite-client-6-for-rhel-9-x86_64-rpms]
+name = Red Hat Satellite Client 6 for RHEL 9 x86_64 (RPMs)
+baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/layered/rhel9/x86_64/sat-client/6/os
 enabled = 0
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 sslverify = 1
 sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/6743030063988927796-key.pem
-sslclientcert = /etc/pki/entitlement/6743030063988927796.pem
+sslclientkey = /etc/pki/entitlement/2248522778159184554-key.pem
+sslclientcert = /etc/pki/entitlement/2248522778159184554.pem
 metadata_expire = 1
 enabled_metadata = 0
