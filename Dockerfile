@@ -1,4 +1,4 @@
-FROM registry.redhat.io/ubi9/ubi-minimal
+FROM registry.redhat.io/ubi9/ubi
 
 USER root
 
@@ -8,22 +8,22 @@ ADD files/files.tgz /
 
 RUN [ ! -f /usr/bin/ping ] && \
     sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription-manager.conf && \
-    { microdnf install --nodocs -y iputils; microdnf clean all; }
+    { dnf install --nodocs -y iputils; dnf clean all; }
 
 RUN ping -c 1 -w 1 fresv07.freygner.local &> /dev/null || { echo ping not ok; echo 10.1.1.226 >> /etc/hosts; } && \
     sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription-manager.conf && \
-    microdnf -y --nodocs update && \
-    microdnf -y --nodocs install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
-    microdnf -y --nodocs install squid squidGuard && \
-    microdnf -y clean all && \
+    dnf -y --nodocs update && \
+    dnf -y --nodocs install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
+    dnf -y --nodocs install squid squidGuard && \
+    dnf -y clean all && \
     mv /etc/squid/squid.conf /etc/squid/squid.conf.ori && \
     rm -rf /etc/pki/entitlement/* && \
     mkdir /etc/squid/cm && \
     chgrp -R root /etc/squid /var/run && \
     chmod -R g=u /var/run
 
-RUN microdnf -y --nodocs install procps-ng iproute && \
-    microdnf -y clean all
+RUN dnf -y --nodocs install procps-ng iproute && \
+    dnf -y clean all
 
 VOLUME /var/spool/squid
 VOLUME /var/log/squid
