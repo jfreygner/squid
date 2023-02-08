@@ -7,6 +7,7 @@ ADD files/files.tgz /
 #RUN ping -c 1 -w 1 fresv07.freygner.local &> /dev/null || mv /etc/yum.repos.d/redhat.repo /etc/yum.repos.d/redhat.repo.sat && \
 
 RUN [ ! -f /usr/bin/ping ] && \
+    sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription-manager.conf && \
     { microdnf install --nodocs -y iputils; microdnf clean all; }
 
 RUN ping -c 1 -w 1 fresv07.freygner.local &> /dev/null || { echo ping not ok; echo 10.1.1.226 >> /etc/hosts; } && \
