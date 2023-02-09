@@ -1,4 +1,4 @@
-FROM registry.redhat.io/ubi9/ubi:9.1
+FROM registry.redhat.io/ubi9/ubi
 
 USER root
 
@@ -14,12 +14,12 @@ RUN [ ! -f /usr/bin/ping ] && \
 RUN ping -c 1 -w 1 fresv07.freygner.local &> /dev/null || { echo ping not ok; echo 10.1.1.226 >> /etc/hosts; } && \
     sed -i".ori" -e 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/subscription-manager.conf && \
     dnf -y --nodocs update && \
-    echo dnf -y --nodocs install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
-    echo dnf -y --nodocs install squid squidGuard && \
+    echo NOT RUN dnf -y --nodocs install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
+    echo NOT RUN dnf -y --nodocs install squid squidGuard && \
     dnf -y --nodocs install squid && \
     dnf -y clean all && \
     mv /etc/squid/squid.conf /etc/squid/squid.conf.ori && \
-    echo rm -rf /etc/pki/entitlement/* && \
+    echo NOT RUN rm -rf /etc/pki/entitlement/* && \
     mkdir /etc/squid/cm && \
     chgrp -R root /etc/squid /var/run && \
     chmod -R g=u /var/run
