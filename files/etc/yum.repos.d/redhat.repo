@@ -9,16 +9,29 @@
 # a "yum repolist" to refresh available repos
 #
 
-[rhel-9-for-x86_64-appstream-rpms]
-name = Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
-baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/rhel9/$releasever/x86_64/appstream/os
+[ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms]
+name = Red Hat Ansible Automation Platform 2.3 for RHEL 9 x86_64 (RPMs)
+baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/layered/rhel9/x86_64/ansible-automation-platform/2.3/os
 enabled = 1
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 sslverify = 1
 sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/5147482181568832383-key.pem
-sslclientcert = /etc/pki/entitlement/5147482181568832383.pem
+sslclientkey = /etc/pki/entitlement/883326229691020800-key.pem
+sslclientcert = /etc/pki/entitlement/883326229691020800.pem
+metadata_expire = 1
+enabled_metadata = 0
+
+[rhel-9-for-x86_64-baseos-rpms]
+name = Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
+baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/rhel9/$releasever/x86_64/baseos/os
+enabled = 1
+gpgcheck = 1
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+sslverify = 1
+sslcacert = /etc/rhsm/ca/katello-server-ca.pem
+sslclientkey = /etc/pki/entitlement/883326229691020800-key.pem
+sslclientcert = /etc/pki/entitlement/883326229691020800.pem
 metadata_expire = 86400
 enabled_metadata = 1
 
@@ -30,36 +43,23 @@ gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 sslverify = 1
 sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/5147482181568832383-key.pem
-sslclientcert = /etc/pki/entitlement/5147482181568832383.pem
+sslclientkey = /etc/pki/entitlement/883326229691020800-key.pem
+sslclientcert = /etc/pki/entitlement/883326229691020800.pem
 metadata_expire = 86400
 enabled_metadata = 0
 
-[rhel-9-for-x86_64-baseos-rpms]
-name = Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
-baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/rhel9/$releasever/x86_64/baseos/os
+[rhel-9-for-x86_64-appstream-rpms]
+name = Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
+baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/rhel9/$releasever/x86_64/appstream/os
 enabled = 1
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 sslverify = 1
 sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/5147482181568832383-key.pem
-sslclientcert = /etc/pki/entitlement/5147482181568832383.pem
+sslclientkey = /etc/pki/entitlement/883326229691020800-key.pem
+sslclientcert = /etc/pki/entitlement/883326229691020800.pem
 metadata_expire = 86400
 enabled_metadata = 1
-
-[ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms]
-name = Red Hat Ansible Automation Platform 2.3 for RHEL 9 x86_64 (RPMs)
-baseurl = https://fresv06.freygner.local/pulp/content/Default_Organization/Testing/RHEL9-WS/content/dist/layered/rhel9/x86_64/ansible-automation-platform/2.3/os
-enabled = 1
-gpgcheck = 1
-gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
-sslverify = 1
-sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/5147482181568832383-key.pem
-sslclientcert = /etc/pki/entitlement/5147482181568832383.pem
-metadata_expire = 1
-enabled_metadata = 0
 
 [satellite-client-6-for-rhel-9-x86_64-rpms]
 name = Red Hat Satellite Client 6 for RHEL 9 x86_64 (RPMs)
@@ -69,7 +69,7 @@ gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 sslverify = 1
 sslcacert = /etc/rhsm/ca/katello-server-ca.pem
-sslclientkey = /etc/pki/entitlement/5147482181568832383-key.pem
-sslclientcert = /etc/pki/entitlement/5147482181568832383.pem
+sslclientkey = /etc/pki/entitlement/883326229691020800-key.pem
+sslclientcert = /etc/pki/entitlement/883326229691020800.pem
 metadata_expire = 86400
 enabled_metadata = 0
